@@ -7,7 +7,10 @@ const stripe = require('stripe')(process.env.STRIPE_KEY)
  
 const app =express();
 app.use(express.json());
-app.use(cors({origin:true}));
+app.use(cors({
+    origin: 'https://67d0a919d7a96d1a6401202b--sensational-trifle-667d88.netlify.app',
+    origin: 'http://localhost:5173',
+  }));
 app.get('/',(req,res)=>{
     res.status(200).json({
         message: 'success!!',
